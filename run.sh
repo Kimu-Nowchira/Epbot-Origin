@@ -1,1 +1,1 @@
-xvfb-run python mnain.py
+xvfb-run python main.py
