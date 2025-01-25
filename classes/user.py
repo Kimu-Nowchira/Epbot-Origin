@@ -139,6 +139,7 @@ class User:
     async def get_penalty(self, room: Room):
         """레벨 제한에 따른 경험치/돈의 배율을 float로 반환합니다"""
         level_limit = room.level_limit
+        if level_limit <= 0: return 1.0
         penalty = (self.level / level_limit) ** 2
         if penalty >= 1: return 1.0
         return round(penalty + 0.00004, 4)
